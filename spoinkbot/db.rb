@@ -4,7 +4,8 @@
 require "sqlite3"
 
 def opendb
-	return SQLite3::Database.new "draft_league.db"
+	return SQLite3::Database.new "db/draft_league.db"
+end
 
 # DELETES THE DATABASE, then recreates it
 def setup
@@ -25,6 +26,7 @@ def setup
 		CREATE TABLE IF NOT EXISTS player_records(
 			playerid varchar(30) NOT NULL,
 			seasonid int NOT NULL,
+			teamname varchar(30),
 			wins int,
 			losses int,
 			placement int,
@@ -35,5 +37,15 @@ def setup
 	SQL
 	# TODO
 	db.execute <<-SQL
-		CREATE TABLE IF NOT EXISTS pokemon();
+		CREATE TABLE IF NOT EXISTS pokemon(
+			playerid varchar(30) NOT NULL,
+			seasonid int NOT NULL,
+			pokeid int,
+			kills int,
+			CONSTRAINT pk PRIMARY KEY (playerid, seasonid, pokeid),
+			FOREIGN KEY (playerid) REFERENCES players(id) ON DELETE CASCADE,
+			FOREIGN KEY (seasonid) REFERENCES seasons(id) ON DELETE CASCADE
+		);
 	SQL
+end
+setup
