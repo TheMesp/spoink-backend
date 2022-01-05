@@ -2,7 +2,7 @@
 secrets.rb
 
 # Ignore db
-/db
+*.db
 
 *.gem
 *.rbc

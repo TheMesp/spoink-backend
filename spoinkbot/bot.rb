@@ -4,8 +4,12 @@ require 'pry'
 require_relative 'secrets.rb'
 bot = Discordrb::Commands::CommandBot.new token: DISCORD_TOKEN, client_id: DISCORD_CLIENT, prefix: 's/'
 
-bot.command(:pokemon, description: 'Prints basic information about a pokemon, including type and weaknesses', aliases: [:p,:poke,:weak,:weakness] ) do |event, pokemon|
-	pokemon = pokemon.gsub(/[^a-zA-Z0-9\-]/,'').downcase # Clean that so i don't get injected plzty
+bot.register_application_command(:pokemon, 'Prints basic information about a pokemon, including type and weaknesses', server_id: 662470757716197428) do |cmd|
+	cmd.string('pokemon', 'The pokemon to look up')
+end
+
+bot.application_command(:pokemon) do |event|
+	pokemon = event.options['pokemon'].gsub(/[^a-zA-Z0-9\-]/,'').downcase # Clean that so i don't get injected plzty
 	response = `curl -s https://pokeapi.co/api/v2/pokemon/#{pokemon}`
 	if response == 'Not Found'
 		return "#{pokemon} is not a recognized pokemon!"
