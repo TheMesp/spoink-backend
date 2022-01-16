@@ -27,7 +27,7 @@ end
 
 def calc_elo_dict(player = nil)
     CSV.foreach("matches.csv") do |row|
-        process_match(row[0], row[1], 50, row[2].to_i)        
+        process_match(row[0], row[1], 40, row[2].to_i)        
     end
     if player
         print("#{@elo_dict[player]}\n")
