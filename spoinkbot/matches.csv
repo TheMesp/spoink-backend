@@ -1,39 +1,39 @@
 ginger,jacob,1,szn 1 week 1
 orange,emperor,1
-danishdiamond,kozak,0
+ddiamond,kozak,0
 ghostly,speedy,0
 ginger,emperor,1,szn 1 week 2
 orange,kozak,0
 speedy,jacob,1
-ghostly,danishdiamond,1
+ghostly,ddiamond,1
 speedy,ginger,1,szn 1 week 3
 orange,ghostly,0
 emperor,kozak,0
-jacob,danishdiamond,0
+jacob,ddiamond,0
 kozak,ghostly,0,szn 1 week 4
 emperor,speedy,0
-ginger,danishdiamond,1
+ginger,ddiamond,1
 jacob,orange,1
 ghostly,emperor,0,szn 1 week 5
-danishdiamond,speedy,0
+ddiamond,speedy,0
 jacob,kozak,1
 ginger,orange,0
 jacob,ghostly,0, szn 1 week 6
 speedy,orange,1
-danishdiamond,emperor,1
+ddiamond,emperor,1
 kozak,ginger,0
 jacob,emperor,1,szn 1 week 7
-danishdiamond,orange,0
+ddiamond,orange,0
 ginger,ghostly,1
 speedy,kozak,1
 emperor,speedy,0,szn 1 qf
-danishdiamond,ginger,0
+ddiamond,ginger,0
 jacob,ghostly,1
 kozak,orange,0
 emperor,ghostly,0,szn 1 sf
-danishdiamond,kozak,1
+ddiamond,kozak,1
 emperor,kozak,1,szn 1 finals
-danishdiamond,ghostly,1,szn 1 bronze
+ddiamond,ghostly,1,szn 1 bronze
 jacob,speedy,0,szn 1 eliminated
 orange,ginger,0
 jacob,orange,0,szn 1 5th place
@@ -41,7 +41,7 @@ serpy,orang,0,szn 2 week 1
 simon,ghostly,0
 speedy,vector,1
 furret1,emperor,1
-orange,danishdiamond,1
+orange,ddiamond,1
 ginger,kozak,0
 jacob,henke,0
 cynda,orbit,0
@@ -50,7 +50,7 @@ orang,ghostly,1
 speedy,furret1,0
 vector,emperor,1
 orange,ginger,0
-danishdiamond,kozak,1
+ddiamond,kozak,1
 jacob,cynda,0
 henke,orbit,0
 emperor,orbit,0,szn 2 week 3
@@ -59,14 +59,14 @@ henke,vector,0
 jacob,speedy,0
 ghostly,kozak,0
 simon,ginger,1
-danishdiamond,orang,0
+ddiamond,orang,0
 orange,serpy,1
 serpy,ghostly,1,szn 2 week 4
 orang,speedy,0
 emperor,simon,1
 vector,furret1,1
 orange,kozak,1
-danishdiamond,jacob,1
+ddiamond,jacob,1
 orbit,ginger,1
 henke,cynda,0
 serpy,speedy,0,szn 2 week 5
@@ -76,8 +76,8 @@ emperor,simon,0
 orange,jacob,1
 henke,ginger,0
 kozak,cynda,0
-orbit,danishdiamond,1
-serpy,danishdiamond,1,szn 2 week 6
+orbit,ddiamond,1
+serpy,ddiamond,1,szn 2 week 6
 orang,ginger,1
 simon,orange,1
 ghostly,jacob,1
@@ -90,7 +90,7 @@ orang,furret1,0
 simon,speedy,1
 emperor,ghostly,1
 orange,henke,0
-danishdiamond,cynda,0
+ddiamond,cynda,0
 ginger,jacob,0
 orbit,kozak,1
 serpy,furret1,1,szn 2 week 8
@@ -98,7 +98,7 @@ simon,orang,0
 speedy,emperor,1
 ghostly,vector,0
 orange,cynda,0
-ginger,danishdiamond,1
+ginger,ddiamond,1
 jacob,orbit,0
 kozak,henke,0
 ginger,serpy,1,szn 2 week 9
@@ -108,13 +108,13 @@ henke,ghostly,1
 cynda,speedy,0
 orbit,vector,0
 orange,furret1,1
-danishdiamond,emperor,0
+ddiamond,emperor,0
 emperor,serpy,0,szn 2 week 10
 vector,orang,1
 speedy,ghostly,1
 simon,furret1,0
 orbit,orange,1
-henke,danishdiamond,1
+henke,ddiamond,1
 jacob,kozak,1
 ginger,cynda,0
 simon,orang,0,szn 2 sword conf wc
@@ -127,12 +127,12 @@ ghostly,serpy,0,sword conf div
 emperor,simon,0
 furret1,orang,0,sword conf 5th
 henke,jacob,1,shield conf div
-kozak,danishdiamond,0
+kozak,ddiamond,0
 orange,ginger,1,shield conf 5th
 ghostly,emperor,0,sword conf finals
 simon,serpy,1,sword conf 3rd
 kozak,jacob,0,shield conf finals
-henke,danishdiamond,0,shield conf 3rd
+henke,ddiamond,0,shield conf 3rd
 ghostly,kozak,1,finals
 emperor,jacob,1,bronze
 emperor,ginger,0,s3w1
@@ -144,14 +144,14 @@ simon,orang,1
 crobatoh,vector,0
 whyachi,ghostly,1
 orbit,serpy,1
-furret1,danishdiamond,1
+furret1,ddiamond,1
 speedy,gengar,1,s3w2
 jacob,kozak,1
 cynda,mesp,1
 ginger,orange,1
 emperor,henke,0
 serpy,furret1,0
-ghostly,danishdiamond,0
+ghostly,ddiamond,0
 whyachi,orbit,0
 orang,vector,0
 simon,crobatoh,1
@@ -164,7 +164,7 @@ jacob,ghostly,0
 mesp,orbit,0
 speedy,serpy,1
 gengar,furret1,0
-kozak,danishdiamond,1
+kozak,ddiamond,1
 emperor,orange,0,s3w4
 ginger,gengar,1
 henke,kozak,1
@@ -172,7 +172,7 @@ cynda,speedy,0
 jacob,mesp,0
 simon,vector,1
 orang,furret1,0
-crobatoh,danishdiamond,1
+crobatoh,ddiamond,1
 whyachi,serpy,0
 ghostly,orbit,0
 mesp,gengar,0,s3w5
@@ -184,7 +184,7 @@ orbit,furret1,1
 vector,whyachi,1
 crobatoh,ghostly,0
 orang,serpy,0
-simon,danishdiamond,1
+simon,ddiamond,1
 emperor,orang,0,s3w6
 ginger,crobatoh,0
 henke,vector,0
@@ -193,7 +193,7 @@ cynda,ghostly,1
 jacob,orbit,0
 mesp,serpy,0
 speedy,furret1,1
-gengar,danishdiamond,0
+gengar,ddiamond,0
 kozak,simon,1
 emperor,mesp,0,s3w7
 ginger,henke,0
@@ -202,7 +202,7 @@ orange,gengar,0
 jacob,speedy,0
 simon,orbit,0
 orang,crobatoh,0
-whyachi,danishdiamond,0
+whyachi,ddiamond,0
 vector,furret1,0
 ghostly,serpy,1
 jacob,gengar,0,s3w8
@@ -213,7 +213,7 @@ emperor,cynda,0
 ghostly,furret1,0
 vector,orbit,0
 crobatoh,serpy,0
-orang,danishdiamond,0
+orang,ddiamond,0
 simon,whyachi,1
 emperor,crobatoh,0,s3w9
 ginger,vector,0
@@ -222,7 +222,7 @@ orange,ghostly,1
 cynda,orbit,0
 jacob,serpy,0
 mesp,furret1,0
-speedy,danishdiamond,1
+speedy,ddiamond,1
 gengar,simon,1
 kozak,orang,1
 emperor,jacob,0,s3w10
@@ -234,14 +234,14 @@ simon,ghostly,1
 orang,whyachi,0
 crobatoh,furret1,1
 vector,serpy,1
-orbit,danishdiamond,1
+orbit,ddiamond,1
 cynda,gengar,0,s3w11
 orange,kozak,0
 henke,mesp,1
 ginger,jacob,1
 emperor,speedy,0
 whyachi,furret1,0
-vector,danishdiamond,0
+vector,ddiamond,0
 crobatoh,orbit,0
 orang,ghostly,0
 simon,serpy,1
@@ -254,7 +254,7 @@ simon,furret1,0
 orang,orbit,0
 crobatoh,whyachi,0
 vector,ghostly,0
-serpy,danishdiamond,0
+serpy,ddiamond,0
 jacob,gengar,0,s3playoffs
 mesp,kozak,1
 orange,cynda,0
@@ -267,14 +267,14 @@ kozak,ghostly,1
 cynda,vector,0
 ginger,furret1,0
 emperor,jacob,0
-gengar,danishdiamond,1
+gengar,ddiamond,1
 speedy,orbit,0
 emperor,crobatoh,1
 jacob,whyachi,1
 crobatoh,whyachi,0
 crobatoh,orang,0
 whyachi,ghostly,0
-danishdiamond,ghostly,1
+ddiamond,ghostly,1
 vector,whyachi,1
 serpy,crobatoh,1
 flare,turtle,0,s4w1
@@ -386,8 +386,39 @@ mattyp,ghostly,1
 crobatoh,vector,0
 ginger,turtle,0
 sylvee,webster,0
-orang,serpy,1,s5w2
+henke,wof,0,s5w2
+tryyal,furret2,0
+maty,mesp,1
+orang,serpy,1
 ghostly,flare,1
 ocho,vector,0
 whyachi,orange,1
+webster,mattyp,1
+pickle,jacob,1
+kozak,turtle,0
 crobatoh,sylvee,0
+ginger,risa,0
+furret2,maty,1,s5w3
+tryyal,whyachi,1
+wof,orang,1
+mesp,pickle,0
+titan,ghostly,1
+orange,turtle,0
+serpy,vector,0
+flare,webster,0
+jacob,ginger,0
+ocho,sylvee,0
+mattyp,crobatoh,1
+kozak,risa,0
+ghostly,wof,1,s5w4
+whyachi,furret2,0
+pickle,maty,0
+turtle,tryyal,0
+orang,vector,0
+webster,titan,1
+ginger,mesp,1
+sylvee,serpy,1
+crobatoh,flare,1
+risa,orange,0
+mattyp,ocho,0
+kozak,jacob,1
