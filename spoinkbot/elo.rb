@@ -39,7 +39,8 @@ def calc_elo_dict(player = nil)
     else
         sorted = @elo_dict.sort_by {|k, v| -v}
         sorted.each do |key,value|
-            print("#{key}: #{value.to_i}\t(+#{@diff_dict[key].round(1)})\n".sub("+-","-"))
+            symbol = @diff_dict[key] < 0 ? '-' : '+';
+            print("#{symbol}#{key}: #{value.to_i}\t(+#{@diff_dict[key].round(1)})\n".sub("+-","-"))
         end
         
     end
