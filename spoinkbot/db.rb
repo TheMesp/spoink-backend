@@ -10,7 +10,7 @@ end
 # DELETES THE DATABASE, then recreates it
 def setup
 	print "Deleting old database...\n"
-	File.delete("db/draft_league.db") if File.exist?("db/draft_league.db")
+	File.delete("/root/discordbots/spoink/db/draft_league.db") if File.exist?("/root/discordbots/spoink/db/draft_league.db")
 	print "Creating tables..."
 	db = opendb
 	db.execute "PRAGMA foreign_keys = ON;"	
@@ -66,6 +66,7 @@ def setup
 	db.execute("INSERT INTO players VALUES (?)", ["Mesp"])
 	db.execute("INSERT INTO players VALUES (?)", ["Ghostly"])
 	db.execute("INSERT INTO players VALUES (?)", ["Crobatoh"])
+	db.execute("INSERT INTO players VALUES (?)", ["Rando"])
 
 	db.execute("INSERT INTO seasons VALUES (?,?,?)", [1,"date(2020-05-31)","date(2020-07-15)"])
 	db.execute("INSERT INTO seasons VALUES (?,?,?)", [2,"date(2021-05-31)","date(2021-07-15)"])
@@ -83,11 +84,8 @@ def setup
 	db.execute("SELECT * FROM seasons") do |row|
 		print("#{row}\n")
 	end
-	print "\n"
-	print db.foreign_key_check("conferences")
-	print "\n"
+
 	db.execute("DELETE FROM seasons WHERE id=1")
-	print db.foreign_key_check("conferences")
 	print "\n"
 	db.execute("SELECT * FROM conferences") do |row|
 		print("#{row}\n")
