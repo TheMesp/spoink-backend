@@ -31,8 +31,11 @@ def process_match(player1, player2, constant, outcome)
 end
 
 def calc_elo_dict(player = nil)
-    CSV.foreach("matches.csv") do |row|
-        process_match(row[0], row[1], 40, row[2].to_i)        
+    Dir.glob("/root/discordbots/spoink/spoinkbot/seasons/*.csv").sort.each do |season|
+        print season + "\n"
+        CSV.foreach(season) do |row|
+            process_match(row[0], row[1], 40, row[2].to_i)        
+        end
     end
     if player
         print("#{@elo_dict[player]}\n")
