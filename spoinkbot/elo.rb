@@ -32,7 +32,6 @@ end
 
 def calc_elo_dict(player = nil)
     Dir.glob("/root/discordbots/spoink/spoinkbot/seasons/*.csv").sort.each do |season|
-        print season + "\n"
         CSV.foreach(season) do |row|
             process_match(row[0], row[1], 40, row[2].to_i)        
         end

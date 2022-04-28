@@ -66,33 +66,33 @@ def setup
 	db.execute("INSERT INTO players VALUES (?)", ["Mesp"])
 	db.execute("INSERT INTO players VALUES (?)", ["Ghostly"])
 	db.execute("INSERT INTO players VALUES (?)", ["Crobatoh"])
-	db.execute("INSERT INTO players VALUES (?)", ["Rando"])
+	db.execute("INSERT INTO players VALUES (?)", ["Risa"])
 
 	db.execute("INSERT INTO seasons VALUES (?,?,?)", [1,"date(2020-05-31)","date(2020-07-15)"])
 	db.execute("INSERT INTO seasons VALUES (?,?,?)", [2,"date(2021-05-31)","date(2021-07-15)"])
 
-	db.execute_batch <<-SQL
-		INSERT INTO conferences VALUES (1,'Ruby');
-	SQL
-	db.execute_batch <<-SQL
-		INSERT INTO conferences VALUES (2,'Ruby');
-	SQL
+	# db.execute_batch <<-SQL
+	# 	INSERT INTO conferences VALUES (1,'Ruby');
+	# SQL
+	# db.execute_batch <<-SQL
+	# 	INSERT INTO conferences VALUES (2,'Ruby');
+	# SQL
 
-	db.execute("SELECT * FROM conferences") do |row|
-		print("#{row}\n")
-	end
-	db.execute("SELECT * FROM seasons") do |row|
-		print("#{row}\n")
-	end
+	# db.execute("SELECT * FROM conferences") do |row|
+	# 	print("#{row}\n")
+	# end
+	# db.execute("SELECT * FROM seasons") do |row|
+	# 	print("#{row}\n")
+	# end
 
-	db.execute("DELETE FROM seasons WHERE id=1")
-	print "\n"
-	db.execute("SELECT * FROM conferences") do |row|
-		print("#{row}\n")
-	end
-	db.execute("SELECT * FROM seasons") do |row|
-		print("#{row}\n")
-	end
+	# db.execute("DELETE FROM seasons WHERE id=1")
+	# print "\n"
+	# db.execute("SELECT * FROM conferences") do |row|
+	# 	print("#{row}\n")
+	# end
+	# db.execute("SELECT * FROM seasons") do |row|
+	# 	print("#{row}\n")
+	# end
 	# db.execute("INSERT INTO player_records VALUES (?,?,?,?,?,?,?)",
 	# 	["Mesp","???","Mesped Up","Diamond",2,0,0]
 	# )
