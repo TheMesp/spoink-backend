@@ -4,13 +4,13 @@
 require "sqlite3"
 
 def opendb
-	return SQLite3::Database.new "/root/discordbots/spoink/db/draft_league.db"
+	return SQLite3::Database.new "/root/discordbots/spoink-project/spoink/db/draft_league.db"
 end
 
 # DELETES THE DATABASE, then recreates it
 def setup
 	print "Deleting old database...\n"
-	File.delete("/root/discordbots/spoink/db/draft_league.db") if File.exist?("/root/discordbots/spoink/db/draft_league.db")
+	File.delete("/root/discordbots/spoink-project/spoink/db/draft_league.db") if File.exist?("/root/discordbots/spoink-project/spoink/db/draft_league.db")
 	print "Creating tables..."
 	db = opendb
 	db.execute "PRAGMA foreign_keys = ON;"	
@@ -36,7 +36,7 @@ def setup
 			FOREIGN KEY (seasonid) REFERENCES seasons(id) ON DELETE CASCADE
 		);
 	SQL
-	print db.foreign_key_list("conferences")
+	# print db.foreign_key_list("conferences")
 	db.execute <<-SQL
 		CREATE TABLE IF NOT EXISTS player_records(
 			playerid varchar(30) NOT NULL,
@@ -90,9 +90,9 @@ def setup
 	# db.execute("SELECT * FROM conferences") do |row|
 	# 	print("#{row}\n")
 	# end
-	# db.execute("SELECT * FROM seasons") do |row|
-	# 	print("#{row}\n")
-	# end
+	db.execute("SELECT * FROM players") do |row|
+		print("#{row}\n")
+	end
 	# db.execute("INSERT INTO player_records VALUES (?,?,?,?,?,?,?)",
 	# 	["Mesp","???","Mesped Up","Diamond",2,0,0]
 	# )
