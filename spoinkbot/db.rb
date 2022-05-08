@@ -73,6 +73,7 @@ def setup
 			pokedex_id int,
 			kills int,
 			CONSTRAINT pk PRIMARY KEY (team_id, poke_id),
+			FOREIGN KEY (player_id) REFERENCES players(id) ON DELETE CASCADE,
 			FOREIGN KEY (team_id) REFERENCES teams(id) ON DELETE CASCADE
 		);
 	SQL
