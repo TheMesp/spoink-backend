@@ -43,6 +43,7 @@ def setup
 	db.execute <<-SQL
 		CREATE TABLE IF NOT EXISTS matches(
 			id int PRIMARY KEY,
+			replay_lin varchar(60),
 			season_id int,
 			winner_id int NOT NULL,
 			loser_id int NOT NULL,
