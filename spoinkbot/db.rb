@@ -26,25 +26,27 @@ def setup
 	db.execute <<-SQL
 		CREATE TABLE IF NOT EXISTS seasons(
 			id int NOT NULL PRIMARY KEY,
-			starttime date,
-			endtime date
+			start_time date,
+			end_time date
 		);
 	SQL
 	
 	db.execute <<-SQL
 		CREATE TABLE IF NOT EXISTS conferences(
-			seasonid int NOT NULL,
+			season_id int NOT NULL,
 			conference varchar(30),
-			CONSTRAINT pk PRIMARY KEY (seasonid, conference),
-			FOREIGN KEY (seasonid) REFERENCES seasons(id) ON DELETE CASCADE
+			CONSTRAINT pk PRIMARY KEY (season_id, conference),
+			FOREIGN KEY (season_id) REFERENCES seasons(id) ON DELETE CASCADE
 		);
 	SQL
 
 	db.execute <<-SQL
 		CREATE TABLE IF NOT EXISTS matches(
-			matchid int PRIMARY KEY,
-			winnerid int NOT NULL,
-			loserid int NOT NULL
+			id int PRIMARY KEY,
+			season_id int,
+			winner_id int NOT NULL,
+			loser_id int NOT NULL,
+			FOREIGN KEY (season_id) REFERENCES seasons(id) ON DELETE CASCADE
 		)
 	SQL
 
@@ -52,25 +54,25 @@ def setup
 	db.execute <<-SQL
 		CREATE TABLE IF NOT EXISTS teams(
 			id int PRIMARY KEY,
-			playerid varchar(30) NOT NULL,
-			seasonid int NOT NULL,
-			teamname varchar(60) NOT NULL,
+			player_id varchar(30) NOT NULL,
+			season_id int NOT NULL,
+			team_name varchar(60) NOT NULL,
 			wins int,
 			losses int,
 			placement int,
-			FOREIGN KEY (playerid) REFERENCES players(id) ON DELETE CASCADE,
-			FOREIGN KEY (seasonid) REFERENCES seasons(id) ON DELETE CASCADE
+			FOREIGN KEY (player_id) REFERENCES players(id) ON DELETE CASCADE,
+			FOREIGN KEY (season_id) REFERENCES seasons(id) ON DELETE CASCADE
 		);
 	SQL
 
 	db.execute <<-SQL
 		CREATE TABLE IF NOT EXISTS pokemon(
-			playerid varchar(30) NOT NULL,
-			teamid int NOT NULL,
-			pokeid int,
+			player_id varchar(30) NOT NULL,
+			team_id int NOT NULL,
+			pokedex_id int,
 			kills int,
-			CONSTRAINT pk PRIMARY KEY (teamid, pokeid),
-			FOREIGN KEY (teamid) REFERENCES teams(id) ON DELETE CASCADE
+			CONSTRAINT pk PRIMARY KEY (team_id, poke_id),
+			FOREIGN KEY (team_id) REFERENCES teams(id) ON DELETE CASCADE
 		);
 	SQL
 	print "Tables created.\n"
