@@ -17,7 +17,10 @@ def setup
 
 	db.execute <<-SQL
 		CREATE TABLE IF NOT EXISTS players(
-			id varchar(30) NOT NULL PRIMARY KEY
+			id varchar(30) NOT NULL PRIMARY KEY,
+			discord_name varchar(30),
+			timezone varchar(10),
+			showdown_name varchar(30)
 		);
 	SQL
 	db.execute <<-SQL
@@ -36,29 +39,38 @@ def setup
 			FOREIGN KEY (seasonid) REFERENCES seasons(id) ON DELETE CASCADE
 		);
 	SQL
+
+	db.execute <<-SQL
+		CREATE TABLE IF NOT EXISTS matches(
+			matchid int PRIMARY KEY,
+			winnerid int NOT NULL,
+			loserid int NOT NULL
+		)
+	SQL
+
 	# print db.foreign_key_list("conferences")
 	db.execute <<-SQL
-		CREATE TABLE IF NOT EXISTS player_records(
+		CREATE TABLE IF NOT EXISTS teams(
+			id int PRIMARY KEY,
 			playerid varchar(30) NOT NULL,
 			seasonid int NOT NULL,
-			teamname varchar(30),
+			teamname varchar(60) NOT NULL,
 			wins int,
 			losses int,
 			placement int,
-			CONSTRAINT pk PRIMARY KEY (playerid, seasonid),
 			FOREIGN KEY (playerid) REFERENCES players(id) ON DELETE CASCADE,
 			FOREIGN KEY (seasonid) REFERENCES seasons(id) ON DELETE CASCADE
 		);
 	SQL
+
 	db.execute <<-SQL
 		CREATE TABLE IF NOT EXISTS pokemon(
 			playerid varchar(30) NOT NULL,
-			seasonid int NOT NULL,
+			teamid int NOT NULL,
 			pokeid int,
 			kills int,
-			CONSTRAINT pk PRIMARY KEY (playerid, seasonid, pokeid),
-			FOREIGN KEY (playerid) REFERENCES players(id) ON DELETE CASCADE,
-			FOREIGN KEY (seasonid) REFERENCES seasons(id) ON DELETE CASCADE
+			CONSTRAINT pk PRIMARY KEY (teamid, pokeid),
+			FOREIGN KEY (teamid) REFERENCES teams(id) ON DELETE CASCADE
 		);
 	SQL
 	print "Tables created.\n"
