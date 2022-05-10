@@ -1,2 +1,13 @@
-# spoink
-Spoink bot for Pokemon Centre draft league server
+# spoink-backend
+
+expressjs backend for the Spoink Draft League Project.
+
+## Project setup
+```
+npm install
+```
+
+## Run backend
+```
+node index.js
+```
