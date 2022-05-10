@@ -1,6 +1,3 @@
-# Protect token
-secrets.rb
-
 # Ignore db
 *.db
 
