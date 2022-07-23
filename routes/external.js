@@ -1,0 +1,13 @@
+var express = require('express');
+var router = express.Router();
+const fetch = require('node-fetch');
+
+/* GET pokeAPI data */
+router.get('/pokemon/:id', function(req, res, next) {
+  fetch(`https://pokeapi.co/api/v2/pokemon/${req.params.id}`).then((response) => response.json())
+  .then((result) => {
+    res.json(result);
+  });
+});
+
+module.exports = router;
