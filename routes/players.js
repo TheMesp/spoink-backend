@@ -68,4 +68,22 @@ router.get('/:playerid/matches', loadPlayer, function(req, res, next) {
   });
 });
 
+/* GET individual player's teams. */
+router.get('/:playerid/teams', loadPlayer, function(req, res, next) {
+  console.log("Got a request for player teams")
+  var sql = `SELECT * FROM teams WHERE player_id=${req.params.playerid}`
+  var params = []
+  db.all(sql, params,(err, rows) => {
+    if(err){
+      res.status(500).json({"error":err.message});
+      return;
+    }
+    console.log(rows);
+    res.json({
+      "message":"success",
+      "data":rows
+    })
+  });
+});
+
 module.exports = router;

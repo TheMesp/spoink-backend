@@ -66,6 +66,7 @@ router.get('/:id/pokemon', function(req, res, next) {
     rows.forEach(row => {
       external.queryPokeAPI(row.pokedex_id).then((response) => response.json()).then((result) => {
         filled_rows.push(result);
+        // send the response once we've got all the backend calls resolved
         if(filled_rows.length == rows.length){
           res.json({
             "message":"success",
