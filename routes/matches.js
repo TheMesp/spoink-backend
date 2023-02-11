@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require("../database.js");
+var external = require("../helpers");
 
 // Middleware for recurring functions
 function loadMatch(req, res, next){
@@ -49,5 +50,8 @@ router.get('/:id', loadMatch, function(req, res, next) {
     res.status(404).json({"error":`Match with id ${req.params.id} not found.`});
   }
 });
+
+/* POST matches data */
+router.post('/', external.postRow, function(req, res, next) {});
 
 module.exports = router;

@@ -68,4 +68,8 @@ router.get('/:id/teams', function(req, res, next) {
     })
   });
 });
+
+/* POST seasons data */
+router.post('/', external.postRow, function(req, res, next) {});
+
 module.exports = router;

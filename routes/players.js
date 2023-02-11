@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require("../database.js");
+var external = require("../helpers");
 
 // Middleware for recurring functions
 function loadPlayer(req, res, next){
@@ -87,44 +88,8 @@ router.get('/:playerid/teams', loadPlayer, function(req, res, next) {
 });
 
 /* POST player data */
-router.post('/', function(req, res, next) {
-  console.log(`Uploading player ${JSON.stringify(req.body)}`);
-  var headers = [];
-  var values = [];
-  
-  Object.entries(req.body).forEach(([key, value]) => {
-      headers.push(key);
-      values.push(value);
-  });
-  headers = headers.join(', ');
-  var insertQuery = values.map((row) => '?').join(', ');
-  var sql = `INSERT INTO players(${headers}) VALUES (${insertQuery})`
-  console.log(sql)
-  console.log(values)
-  db.run(sql, values, function(err) {
-    if (err) {
-      res.status(500).json({"error":err.message});
-      console.log(err.message);
-      return;
-    }
-    console.log(`Rows inserted ${this.changes}`);
-    res.json({
-      "message":"success",
-      "changes":this.changes
-    })
-  });
-  // var sql = "INSERT INTO #{tablename}(#{headers.join(', ')}) VALUES (#{Array.new(headers.size, '?').join(', ')})"
-  // var params = []
-  // db.all(sql, params,(err, rows) => {
-  //   if(err){
-  //     res.status(500).json({"error":err.message});
-  //     return;
-  //   }
-  //   console.log(rows);
-  //   res.json({
-  //     "message":"success"
-  //   })
-  // });
+router.post('/', external.postRow, function(req, res, next) {
+  console.log("Got a post request for players")
 });
 
 module.exports = router;

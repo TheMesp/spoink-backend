@@ -77,4 +77,8 @@ router.get('/:id/pokemon', function(req, res, next) {
     })
   });
 });
+
+/* POST team data */
+router.post('/', external.postRow, function(req, res, next) {});
+
 module.exports = router;
