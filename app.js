@@ -11,6 +11,7 @@ var matchesRouter = require('./routes/matches');
 var seasonsRouter = require('./routes/seasons');
 var teamsRouter = require('./routes/teams')
 var externalRouter = require('./routes/external');
+var pokemonRouter = require('./routes/pokemon');
 
 var app = express();
 app.use(cors('http://138.197.159.196'));
@@ -31,6 +32,7 @@ app.use('/matches', matchesRouter);
 app.use('/seasons', seasonsRouter);
 app.use('/teams', teamsRouter);
 app.use('/external', externalRouter);
+app.use('/pokemon', pokemonRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
